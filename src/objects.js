@@ -1,41 +1,59 @@
 const createPerson = (name, age) => {
-  // your code here
+  return {
+    name: name,
+    age: age
+  };
 };
 
 const getName = object => {
-  // your code here
+  return object.name;
 };
 
 const getProperty = (property, object) => {
-  // your code here
+  return object[property];
 };
 
 const hasProperty = (property, object) => {
-  // your code here
+  return object.hasOwnProperty(property);
 };
 
 const isOver65 = person => {
-  // your code here
+  return person.age > 65
 };
 
 const getAges = people => {
-  // your code here
+  return people.map(person => person.age);
 };
 
+//Why person?
+
 const findByName = (name, people) => {
-  // your code here
+  return people.find(obj => obj.name === name);
 };
 
 const findHondas = cars => {
-  // your code here
+  return cars.filter(obj => obj.manufacturer === "Honda");
 };
+//Was using find then map but it was filter
 
 const averageAge = people => {
-  // your code here
+  const totalAge = people.reduce((prevAge, currentPerson) => {
+    return prevAge + currentPerson.age;
+  }, 0);
+
+  return totalAge / people.length;
 };
+//I did have something completely different to the above found on the cheat sheet! 
+//understand concept of how to get the averge but how to pull the objects.. 
 
 const createTalkingPerson = (name, age) => {
-  // your code here
+  return {
+    name: name,
+    age: age,
+    introduce: strangersName => {
+      return `Hi ${strangersName}, my name is ${name} and I am ${age}!`;
+    }
+  };
 };
 
 module.exports = {
