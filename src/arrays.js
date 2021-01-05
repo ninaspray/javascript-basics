@@ -1,8 +1,5 @@
 const getNthElement = (index, array) => {
-  if (index > (array.length - 1)) {
-    return array[index - array.length]
-  };
-  return array[index];
+  return array[index % array.length]
 };
 
 const arrayToCSVString = array => {
@@ -34,7 +31,7 @@ const uppercaseWordsInArray = strings => {
 };
 
 const reverseWordsInArray = strings => {
-  return strings.map(strings => strings.split("").reverse().join("").split(" ").reverse().join(" "));
+  return strings.map(strings => strings.split("").reverse().join(""));
 };
 
 const onlyEven = numbers => {
@@ -61,7 +58,9 @@ const sumNumbers = numbers => {
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const reversewords = reverseWordsInArray(strings);
+  reversewords.sort()
+  return reverseWordsInArray(reversewords);
 };
 
 module.exports = {

@@ -22,7 +22,7 @@ describe("getNthElement", () => {
   it("returns the element at the given position", () => {
     expect(getNthElement(0, array)).toEqual("cat");
     expect(getNthElement(2, array)).toEqual("elephant");
-    expect(getNthElement(3, array)).toEqual("fox");
+    expect(getNthElement(20, array)).toEqual("cat");
   });
 
   it("if n is greater than the number of elements, it cycles back to the start", () => {
@@ -205,7 +205,7 @@ describe("sumNumbers", () => {
 });
 
 describe("sortByLastLetter", () => {
-  xit("sorts the string by the last character", () => {
+  it("sorts the string by the last character", () => {
     expect(
       sortByLastLetter(["Lannister", "Stark", "Greyjoy", "Targaryen"])
     ).toEqual(["Stark", "Targaryen", "Lannister", "Greyjoy"]);
